@@ -12,5 +12,7 @@ class User < ApplicationRecord
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
+  has_many :messages, dependent: :destroy 
+
 
 end

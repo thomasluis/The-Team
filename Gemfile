@@ -54,7 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2017-12-15 14:10:44 -0500 by luisthomas:
-gem "devise", "~> 4.3"
-# gem 'clearance', '~> 1.16'
+# gem "devise", "~> 4.3"
+gem 'clearance', '~> 1.16'
 gem 'shrine', '~> 2.6'
 gem "nokogiri", "~> 1.8"

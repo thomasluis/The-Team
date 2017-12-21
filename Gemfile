@@ -58,3 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'clearance', '~> 1.16'
 gem 'shrine', '~> 2.6'
 gem "nokogiri", "~> 1.8"
+
+# Added at 2017-12-21 11:41:07 -0500 by luisthomas:
+gem "hirb", "~> 0.7.3"

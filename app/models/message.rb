@@ -1,7 +1,11 @@
 class Message < ApplicationRecord
   belongs_to :user
 
-  validates :body, presence: true, unless: :attachment_data
+  belongs_to :chat
+
+  # validates :body, presence: true, unless: :attachment_data
+
+  validates :content, presence: true, unless: :attachment_data
 
   after_create_commit :broadcast_message
 

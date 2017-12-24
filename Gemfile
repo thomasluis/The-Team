@@ -61,3 +61,12 @@ gem "nokogiri", "~> 1.8"
 
 # Added at 2017-12-21 11:41:07 -0500 by luisthomas:
 gem "hirb", "~> 0.7.3"
+
+# Added at 2017-12-23 16:11:24 -0500 by luisthomas:
+gem "gcloud", "~> 0.23.0"
+
+# Added at 2017-12-24 13:51:15 -0500 by luisthomas:
+# gem "google-api-client", "~> 0.17.4"
+
+# Added at 2017-12-24 16:39:56 -0500 by luisthomas:
+gem "google-cloud-translate", "~> 1.1"

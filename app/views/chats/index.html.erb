@@ -1,21 +1,27 @@
-<h1>Demo Chat</h1>
-
-<div id="messages" style="background-color: cadetblue">
-  <%= render @messages %>
-</div>
-
-<h2>New message</h2>
-
-<%= form_with url: '#', html: {id: 'new-message'} do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body, id: 'message-body' %>
-
-  <div class="form-group">
-    <%= f.file_field :attachment, id: 'message-attachment' %>
-    <br>
-    <small>Only PNG, JPG and GIf images are allowed</small>
-  </div>
-
-  <br>
-  <%= f.submit %>
-<% end %>
+<p>Existing Chats:</p>
+<ul>
+ <% if @existing_chats_users %>
+   <% @existing_chats_users.each do |other_user| %>
+    <% if other_user != current_user %>
+      <li>
+        <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+        <%= other_user.username %>
+        <% end %>
+      </li>
+     <% end %>
+   <% end %>
+  <% end %>
+</ul>
+<p>All Users:</p>
+<ul>
+  <% User.all.each do |other_user| %>
+   <% if other_user != current_user %>
+     <li>
+       <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+       <%= other_user.username %>
+       <% end %>
+     </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to "Logout", session_path(current_user.id), method: :delete  %>

@@ -6,4 +6,10 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
+  resources :users, only:[:new, :create] do
+   resources :chats
+  end
+
+  resources :messages
+
 end

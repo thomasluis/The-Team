@@ -8,5 +8,5 @@ class ApplicationController < ActionController::Base
 
   # require "google/cloud/translate"
 
-  # translate = Google::Cloud::Translate.new project: project_id
+  @translate = Google::Cloud::Translate.new project: project_id
 end

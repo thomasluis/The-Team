@@ -1,4 +1,13 @@
 class MessagesController < ApplicationController
+
+   def index
+      @chat = current_user.chats.find_by_id(params[:chat_id])
+      @target = params[:target].presence || "en"
+      respond_to do |format|
+         format.html { render partial: 'messages/message', collection: @chat.messages.order(id: :asc) }
+      end
+   end
+
    def create
       message = Message.new(message_params)
       message.user = current_user

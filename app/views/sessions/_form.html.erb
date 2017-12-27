@@ -1,7 +1,8 @@
-<div class="login-page">
-  <div class="user">
 
-  <form class="form-group">
+
+<div class="login-page">
+   <div class="user">
+  <div class="form__group">
     <%= form_for :session, url: session_path do |form| %>
     <div class="login-form">
 
@@ -9,15 +10,19 @@
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
       </header>
       <br>
+
   <div class="text-field form__group">
-    <%= form.text_field :email, class: "form__input", placeholder: "Email" %>
+    <%#= form.label :email %>
+    <%= form.text_field :email, type: 'email', class: "form__input", placeholder: "Email" %>
   </div>
+
   <div class="password-field form__group">
+    <%#= form.label :password %>
     <%= form.password_field :password, class: "form__input", placeholder: "Password" %>
   </div>
+
   <div class="submit-field">
-      <button class="btn" type="button">Sign in</button>
-      <%= form.submit %>
+    <%= form.submit %>
   </div>
 
   <div class="other-links form__group">
@@ -28,6 +33,23 @@
   </div>
   </div>
 <% end %>
-</form>
 </div>
 </div>
+</div>
+<!-- <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div> -->

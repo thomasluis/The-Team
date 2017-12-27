@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -70,3 +70,6 @@ gem "gcloud", "~> 0.23.0"
 
 # Added at 2017-12-24 16:39:56 -0500 by luisthomas:
 gem "google-cloud-translate", "~> 1.1"
+
+# Added at 2017-12-27 14:43:35 -0500 by luisthomas:
+gem "pg", "~> 0.21.0"

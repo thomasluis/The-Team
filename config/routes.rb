@@ -10,6 +10,8 @@ Rails.application.routes.draw do
    resources :chats do
    end
   end
+  resources :users, controller: 'users', only: Clearance.configuration.user_actions
+
 
   resources :chats, only: [] do
      resources :messages, only:[:index]

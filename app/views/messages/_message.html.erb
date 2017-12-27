@@ -1,11 +1,21 @@
-<% if current_user == session[:id] %>
-   <p style="text-align: right"><%= message.user.username %>: <%= translation = TRANSLATOR.translate message.content, to: @target %></p>
-   <p><% "Original text: #{message.content}, Translation: #{translation}"%></p>
-
-<% else %>
-   <p style="text-align: left"><%= message.user.username %>:
-   <% translation = TRANSLATOR.translate message.content, to: @target %></p>
-
-   <p style="text-align: left"><%= "Original text: #{message.content}, Translation: #{translation}"%></p>
-
+<% if defined?(target) %>
+   <% @target = target %>
 <% end %>
+
+
+<%= message.attachment  %>
+
+<% if message.user_id == session[:id] %>
+   <div style="text-align: right">
+      <p style="text-align: left"><%= message.user.username %>:
+         <% translation = TRANSLATOR.translate message.content, to: @target %></p>
+
+      <p style="text-align: left"><%= "Original text: #{message.content}, Translation: #{translation}"%></p>
+   </div>
+<% else %>
+   <div style="text-align: left">
+      <p><%= message.user.username.upcase %>: <% translation = TRANSLATOR.translate message.content, to: @target %></p>
+      <p><%= "#{translation}"%></p>
+   </div>
+<% end %>
+<hr>

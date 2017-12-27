@@ -51,7 +51,7 @@
 <main class="full-bg-img view intro py-5 white-text wow fadeInUp">
   <div class="text-center container">
      <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
+      Signed in as: <%= current_user.username %>
       <%= button_to 'Sign out', sign_out_path, method: :delete %>
      <% else %>
       <%= link_to 'Sign in', sign_in_path %>

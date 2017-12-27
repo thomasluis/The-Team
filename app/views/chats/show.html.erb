@@ -1,29 +1,15 @@
 <div>
   <h5>Chat with <%= @other_user.username %></h5>
-  <% if @chat.messages.any? %>
     <div id="messages">
       <%= hidden_field_tag :chat_message_url, chat_messages_path(@chat) %>
       <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
-
+      <br>
       <% @target = "en" %>
-      <div class="message_wrapper">
+      <div class="message_wrapper rounded" style="background-color: white; color: black">
          <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
       </div>
       <br>
     </div>
-  <%else%>
-    <div id="messages">
-    </div>
-  <%end%>
 </div>
-<br>
 <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
-</div>
-<script>
-  // createMessageChannel();
-  // app/assets/javascripts/channels/messages.js
-  // messageForm();
-  // app/assets/javascripts/messages_form.js
-</script>
-
 <%= hidden_field_tag :chat_id, @chat.id%>

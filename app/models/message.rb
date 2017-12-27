@@ -1,28 +1,31 @@
 class Message < ApplicationRecord
-  belongs_to :user
+   include AttachmentUploader[:attachment]
+   belongs_to :user
 
-  belongs_to :chat
+   belongs_to :chat
 
-  # validates :body, presence: true, unless: :attachment_data
+   attr_accessor :target_to_msg
 
-  validates :content, presence: true, unless: :attachment_data
+   # validates :body, presence: true, unless: :attachment_data
 
-  after_create_commit :broadcast_message
+   validates :content, presence: true, unless: :attachment_data
 
-  include AttachmentUploader[:attachment]
+   after_create_commit :broadcast_message
 
-  # virtual attributes for temp storage of attachment's original name
-  def attachment_name=(name)
-    @attachment_name = name
-  end
 
-  def attachment_name
-    @attachment_name
-  end
+   # virtual attributes for temp storage of attachment's original name
+   def attachment_name=(name)
+      @attachment_name = name
+   end
 
-  private
+   def attachment_name
+      @attachment_name
+   end
 
-  def broadcast_message
-    MessageBroadcastJob.perform_later(self)
-  end
+   private
+
+   def broadcast_message
+      target = self.target_to_msg.presence
+      MessageBroadcastJob.perform_later(self, target)
+   end
 end

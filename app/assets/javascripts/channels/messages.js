@@ -30,7 +30,7 @@ jQuery(document).on('turbolinks:load', function() {
       received: function(data) {
         if (data['message']) {
           $new_message_body.val('');
-          return $messages.append(data['message']);
+          return $messages.find(".message_wrapper").append(data['message']);
         }
       },
       send_message: function(message, file_uri, original_name) {
@@ -62,10 +62,3 @@ jQuery(document).on('turbolinks:load', function() {
     });
   }
 });
-
-// gcloud projects add-iam-policy-binding central-diagram-189014 \
-//   --member "serviceAccount:transltr@central-diagram-189014.iam.gserviceaccount.com" \
-//   --role "roles/owner"
-//
-//   gcloud iam service-accounts keys create service-account.json \
-//   --iam-account transltr@central-diagram-189014.iam.gserviceaccount.com

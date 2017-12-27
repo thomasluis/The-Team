@@ -1,6 +1,5 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-     Rails.logger.debug("========= #{params}")
      stream_from "messages_#{params[:chat_id]}"
   end
 

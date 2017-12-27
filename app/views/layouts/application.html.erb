@@ -42,8 +42,7 @@
             </li> -->
             <li class="nav-item">
               <% if signed_in? %>
-               Signed in as: <%= current_user.email %>
-               <%= button_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+               <%= link_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
               <% else %>
                <%= link_to 'Sign in', sign_in_path, class: 'nav-link' %>
               <% end %>
@@ -64,12 +63,10 @@
 <!--Main Layout-->
 <main class="full-bg-img view intro py-5 white-text wow fadeInUp">
   <div class="text-center container">
-
-
-     <!-- <div id="flash">
+     <div id="flash">
       <% flash.each do |key, value| %>
          <div class="flash <%#= key %>"><%#= value %></div>
-      <% end %> -->
+      <% end %>
   <%= yield %>
   </div>
 </main>

@@ -30,7 +30,18 @@ jQuery(document).on('turbolinks:load', function() {
       received: function(data) {
         if (data['message']) {
           $new_message_body.val('');
-          return $messages.find(".message_wrapper").append(data['message']);
+          // make a jax call to the BE
+          // send the message from data[""message]
+          // YOU NEED TO SEND THE target: $("#target").val()
+          $.ajax({
+              url: $("#chat_message_url").val(),
+              type: 'GET',
+              contentType: 'application/html',
+              data: { target: $("#message_target_to_msg").val() },
+              success: function(result) {
+                 $messages.find(".message_wrapper").html(result);
+              }
+          });
         }
       },
       send_message: function(message, file_uri, original_name) {

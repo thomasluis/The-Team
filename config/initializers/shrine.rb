@@ -20,5 +20,5 @@ Shrine::Attacher.validate do
                                    'image/png',
                                    'image/gif'
                                ]
-  validate_max_size 1.megabyte
+  validate_max_size 3.megabyte
 end

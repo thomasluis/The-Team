@@ -3,19 +3,23 @@
 <% end %>
 
 
-<%= message.attachment  %>
+<% if message.attachment_data? %>
+    <br>
+    <%= link_to "View #{message.attachment.original_filename}",
+                message.attachment.url, target: '_blank' %>
+  <% end %>
 
 <% if message.user_id == session[:id] %>
    <div style="text-align: right">
-      <p style="text-align: left"><%= message.user.username %>:
+      <p><%= message.user.username %>:
          <% translation = TRANSLATOR.translate message.content, to: @target %></p>
 
-      <p style="text-align: left"><%= "Original text: #{message.content}, Translation: #{translation}"%></p>
+      <p><%= "Original text: #{message.content}, Translation: #{translation}"%></p>
    </div>
 <% else %>
    <div style="text-align: left">
       <p><%= message.user.username.upcase %>: <% translation = TRANSLATOR.translate message.content, to: @target %></p>
-      <p><%= "#{translation}"%></p>
+      <p><%= translation %></p>
    </div>
 <% end %>
 <hr>

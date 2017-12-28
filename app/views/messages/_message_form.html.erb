@@ -1,12 +1,15 @@
 <%=form_for message, remote: true, authenticity_token: true do |f|%>
-   <div class="form-group">
-      <%= f.text_area :content, data: {textarea: "message"}%>
-   </div>
+   <div class="row">
 
-   <div class="form-group">
-      <%= f.file_field :attachment, id: 'message-attachment' %>
-      <br>
-      <small>Only PNG, JPG and GIf images are allowed</small>
+      <div class=" col-sm-4">
+         <%= f.file_field :attachment, id: 'message-attachment' %>
+         <br>
+         <small>Only PNG, JPG and GIf images are allowed</small>
+      </div>
+      <div class=" col-sm-8">
+         <%= f.text_area :content, data: {textarea: "message"}%>
+      </div>
+
    </div>
    <!-- this hidden field is for the MessagesController and Action Cable to keep track of what chat this message belongs to -->
    <%= f.hidden_field :chat_id, value: chat.id %>
@@ -15,6 +18,6 @@
 
    <%= f.hidden_field :user_id, value: current_user.id %>
 
-   <%= f.submit %>
+   <span style="text-align: center"><%= f.submit %></span>
 
 <%end%>

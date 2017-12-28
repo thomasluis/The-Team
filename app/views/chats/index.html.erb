@@ -1,5 +1,5 @@
 <p>Existing Chats:</p>
-<ul>
+<ul class="list-unstyled">
  <% if @existing_chats_users %>
    <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
@@ -13,7 +13,7 @@
   <% end %>
 </ul>
 <p>All Users:</p>
-<ul>
+<ul class="list-unstyled">
   <% User.all.each do |other_user| %>
    <% if other_user != current_user %>
      <li>
@@ -24,4 +24,17 @@
     <% end %>
   <% end %>
 </ul>
-<%= link_to "Logout", session_path(current_user.id), method: :delete  %>
+
+
+<%= form_tag(users_path ,method: :get, :id => "users_search", remote: :true) do %>
+   <p>
+     Search for a user <%= text_field_tag :term, params[:term] %>
+     <br>
+     <%= submit_tag 'Search', name: nil %>
+  </p>
+  <div id="users">
+     <%#= render '../users/users' %>
+  </div>
+<% end %>
+
+<%#= link_to "Logout", session_path(current_user.id), method: :delete  %>

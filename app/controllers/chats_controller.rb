@@ -1,12 +1,13 @@
 require 'securerandom'
 class ChatsController < ApplicationController
-  before_action :require_login
+  # before_action :require_login
   def logged_in?
      current_user != nil
   end
   def index
     chats = current_user.chats
     @existing_chats_users = current_user.existing_chats_users
+    @users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 15)#.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:term])
   end
   def create
     @other_user = User.find(params[:other_user])

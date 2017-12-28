@@ -12,4 +12,12 @@ class User < ApplicationRecord
     existing_chat_users.uniq
   end
 
+  def self.search(term)
+     if term
+        where('username LIKE ?', "%#{term}%")
+     else
+        all
+     end
+  end
+
 end

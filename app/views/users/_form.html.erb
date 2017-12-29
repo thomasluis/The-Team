@@ -8,11 +8,9 @@
 
     <div class="user">
         <header class="user__header">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt=""
+            <%= image_tag "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" %>
         </header>
-
         <br>
-
         <div class="text-field form__group">
           <!-- <%= form.label :email %> -->
           <%= form.text_field :email, type: 'email', class: "form__input", placeholder: "Email address" %>
@@ -22,31 +20,20 @@
           <%= form.text_field :username, class: "form__input", placeholder: "Username" %>
         </div>
 
+        <div class="text-field form__group">
+          <%#= form.text_field :native_language, class: "form__input", placeholder: "Native Language" %>
+        </div>
+        <%#= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
+
         <div class="password-field form__group">
           <%= form.password_field :password, class: "form__input", placeholder: "Password" %>
         </div>
 
         <div class="submit-field">
-            <button class="btn" type="button">Register</button>
-
-          <%= form.submit %>
+            <!-- <button class="btn" type="button">Register</button> -->
+            <%= submit_tag 'Register', class: "btn btn-primary"  %>
+          <%#= form.submit %>
         </div>
-
-        <!-- <form class="form">
-            <div class="form__group">
-                <input type="text" placeholder="Username" class="form__input" />
-            </div>
-
-            <div class="form__group">
-                <input type="email" placeholder="Email" class="form__input" />
-            </div>
-
-            <div class="form__group">
-                <input type="password" placeholder="Password" class="formhhj__input" />
-            </div>
-
-            <button class="btn" type="button">Register</button>
-        </form> -->
     </div>
 </div>
 </div>

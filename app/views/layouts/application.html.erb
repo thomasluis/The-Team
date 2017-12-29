@@ -19,8 +19,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <header class=" ">
+    <nav class="navbar overflow fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
       <%= link_to 'Welcome to ChatterBox', root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,14 +61,14 @@
 <p class="alert"><%= alert %></p>
 
 <!--Main Layout-->
-<main class=" view intro py-5 white-text wow fadeInUp">
-  <div class="text-center container">
-     <div id="flash">
-      <% flash.each do |key, value| %>
-         <div class="flash <%#= key %>"><%#= value %></div>
-      <% end %>
+<!-- <div id="flash">
+   <% flash.each do |key, value| %>
+   <div class="flash <%#= key %>"><%#= value %></div>
+   <% end %>
+</div> -->
+<main class="view py-5 white-text wow fadeInUp">
+  <!-- <div class="text-center container"> -->
   <%= yield %>
-  </div>
 </main>
 
 <!-- Optional JavaScript -->

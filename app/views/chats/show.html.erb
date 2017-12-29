@@ -1,15 +1,17 @@
-<div>
-  <h5>Chat with <%= @other_user.username %></h5>
-    <div id="messages">
-      <%= hidden_field_tag :chat_message_url, chat_messages_path(@chat) %>
-      <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
-      <br>
-      <% @target = "en" %>
-      <div class="message_wrapper rounded" style="background-color: white; color: black">
-         <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
-      </div>
-      <br>
-    </div>
+<div class="container">
+   <div>
+     <h5>Chat with <%= @other_user.username %></h5>
+       <div id="messages">
+         <%= hidden_field_tag :chat_message_url, chat_messages_path(@chat) %>
+         <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
+         <br>
+         <% @target = "en" %>
+         <div class="message_wrapper rounded" style="background-color: white; color: black">
+            <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
+         </div>
+         <br>
+       </div>
+   </div>
+   <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+   <%= hidden_field_tag :chat_id, @chat.id%>
 </div>
-<%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
-<%= hidden_field_tag :chat_id, @chat.id%>

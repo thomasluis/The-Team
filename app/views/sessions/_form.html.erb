@@ -1,56 +1,35 @@
-
-
 <div class="login-page">
    <div class="user">
-  <div class="form__group">
-    <%= form_for :session, url: session_path do |form| %>
-    <div class="login-form">
+      <div class="form__group">
+         <%= form_for :session, url: session_path do |form| %>
+         <div class="login-form">
 
-      <header class="user__header">
-          <%= image_tag "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" %>
-      </header>
-      <br>
+            <header class="user__header">
+               <%= image_tag "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" %>
+            </header>
+            <br>
+            <div class="text-field form__group">
+               <%= form.text_field :email, type: 'email', class: "form__input", placeholder: "Email" %>
+            </div>
 
-  <div class="text-field form__group">
-    <%#= form.label :email %>
-    <%= form.text_field :email, type: 'email', class: "form__input", placeholder: "Email" %>
-  </div>
+            <div class="password-field form__group">
+               <%= form.password_field :password, class: "form__input", placeholder: "Password" %>
+            </div>
 
-  <div class="password-field form__group">
-    <%#= form.label :password %>
-    <%= form.password_field :password, class: "form__input", placeholder: "Password" %>
-  </div>
+            <div class="submit-field">
+               <%= submit_tag 'Sign in', class: "btn btn-primary"  %>
+            </div>
 
-  <div class="submit-field">
-    <%#= form.submit %>
-   <%= submit_tag 'Sign in', class: "btn btn-primary"  %>
-  </div>
-
-  <div class="other-links form__group">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
-  </div>
-<% end %>
+            <div class="other-links form__group">
+               <% if Clearance.configuration.allow_sign_up? %>
+               <small>
+                  <%= link_to t(".sign_up"), sign_up_path %>
+                  <% end %>|
+                  <%= link_to t(".forgot_password"), new_password_path %>
+               </small>
+            </div>
+         </div>
+         <% end %>
+      </div>
+   </div>
 </div>
-</div>
-</div>
-<!-- <div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
-  </div>
-</div> -->

@@ -30,9 +30,10 @@
         </div>
 
         <div class="submit-field">
-            <!-- <button class="btn" type="button">Register</button> -->
             <%= submit_tag 'Register', class: "btn btn-primary"  %>
-          <%#= form.submit %>
+        </div>
+        <div class="">
+           <small>Already chatting? <%= link_to "Sign in", sign_in_path %></small>
         </div>
     </div>
 </div>

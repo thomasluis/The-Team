@@ -27,7 +27,7 @@ C A R O U S E L
                <% if signed_in? %>
                <%= link_to 'Enter chats', user_chats_path(current_user.id), html_options = { class: "btn btn-green btn-rounded btn-floating"} %>
                <% else %>
-               <%= link_to 'Sign in', sign_in_path, html_options = { class: "btn btn-green btn-rounded btn-floating"} %>
+               <%= link_to 'Register', sign_up_path, html_options = { class: "btn btn-green btn-rounded btn-floating"} %>
                <% end %>
             </div>
          </div>

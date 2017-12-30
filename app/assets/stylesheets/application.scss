@@ -13,10 +13,25 @@ body {
    font-family: $font-family;
    font-size: $font-size;
    // background-size: 200% 100% !important;
-   animation: move 10s ease infinite;
-   // transform: translate3d(0, 0, 0);
-   background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-   height: 200vh;
+   animation: move 5s ease infinite;
+   transform: translate3d(0, 0, 0);
+   background: linear-gradient(#6E8898 10%, #9FB1BC 90%) no-repeat;
+   height: 100vh;
+}
+html {
+   height: 100%;
+}
+body {
+   height: 100%;
+   margin: 0;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+textarea {
+   background-color: white;
+}
+.form-control {
+   background-color: white;
 }
 
 .user {
@@ -58,6 +73,7 @@ body {
 }
 
 .form__input {
+   color: white;
    display: block;
    width: 90% !important;
    padding: 20px;
@@ -90,18 +106,18 @@ body {
    }
 }
 .btn-round-lg{
-border-radius: 22.5px;
+   border-radius: 22.5px;
 }
 .btn-round{
-border-radius: 17px;
+   border-radius: 17px;
 }
 .btn-round-sm{
-border-radius: 15px;
+   border-radius: 15px;
 }
 .btn-round-xs{
-border-radius: 11px;
-padding-left: 10px;
-padding-right: 10px;
+   border-radius: 11px;
+   padding-left: 10px;
+   padding-right: 10px;
 }
 
 // Place all the styles related to the home controller here.

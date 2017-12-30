@@ -20,45 +20,45 @@
 </head>
 <body>
    <header class=" ">
-<nav class="navbar navbar-expand-lg navbar-dark special-color">
-<%= link_to 'Welcome to Babel', root_path, class: 'navbar-brand' %>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-   <ul class="navbar-nav mr-auto">
+      <nav class="navbar navbar-expand-lg navbar-dark special-color">
+         <%= link_to 'Welcome to Babel', root_path, class: 'navbar-brand' %>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+         aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav mr-auto">
 
-   </ul>
-<ul class="navbar-nav">
-   <li class="nav-item">
-      <%= link_to 'Home', root_path, class: 'nav-link' %>
-   </li>
-   <% if signed_in? %>
-   <li class="nav-item">
-      <%= link_to 'Enter chats', user_chats_path(current_user.id), class: "nav-link" %>
-   </li>
-   <% end %>
-   <!-- <li class="nav-item">
-   <%= link_to 'Log out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
-   </li>
-   <li class="nav-item">
-   <%= link_to 'Log in', sign_in_path, class: "nav-link" %>
-   </li> -->
-   <li class="nav-item">
-   <% if signed_in? %>
-   <%= link_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
-   <% else %>
-   <%= link_to 'Sign in', sign_in_path, class: 'nav-link' %>
-   <% end %>
-   <!-- <%= link_to 'Log out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %> -->
-   </li>
-   <li class="nav-item">
-   <%= link_to 'Register', sign_up_path, class: "nav-link" %>
-   </li>
-</ul>
-</div>
-</nav>
+         </ul>
+         <ul class="navbar-nav">
+            <li class="nav-item">
+               <%= link_to 'Home', root_path, class: 'nav-link' %>
+            </li>
+            <% if signed_in? %>
+            <li class="nav-item">
+               <%= link_to 'Enter chats', user_chats_path(current_user.id), class: "nav-link" %>
+            </li>
+            <% end %>
+            <!-- <li class="nav-item">
+            <%= link_to 'Log out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Log in', sign_in_path, class: "nav-link" %>
+                  </li> -->
+            <li class="nav-item">
+               <% if signed_in? %>
+               <%= link_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+               <% else %>
+               <%= link_to 'Sign in', sign_in_path, class: 'nav-link' %>
+               <% end %>
+               <!-- <%= link_to 'Log out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %> -->
+            </li>
+            <li class="nav-item">
+               <%= link_to 'Register', sign_up_path, class: "nav-link" %>
+            </li>
+         </ul>
+      </div>
+   </nav>
 </header>
 <!--Main Navigation-->
 <span class="notice"><%= notice %></span>

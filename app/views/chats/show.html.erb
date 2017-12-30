@@ -3,7 +3,7 @@
      <h5>Chat with <%= @other_user.username %></h5>
        <div id="messages">
          <%= hidden_field_tag :chat_message_url, chat_messages_path(@chat) %>
-         <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
+         <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }), class: 'form-control' %>
          <br>
          <% @target = "en" %>
          <div class="message_wrapper rounded" style="background-color: white; color: black">

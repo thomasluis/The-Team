@@ -5,7 +5,7 @@
    <br>
    <% @target = "en" %>
    <div class="no-padding right-side messages">
-      <ul>
+      <ul class="col-xs-12 no-padding">
          <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
       </ul>
    </div>

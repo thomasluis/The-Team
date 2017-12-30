@@ -34,7 +34,6 @@ class ChatsController < ApplicationController
                            {name: "Bengali", abrv: "bn" }, {name: "Swedish", abrv: "sv" },
                            {name: "Chinese", abrv: "zh-CN" }, {name: "French", abrv: "fr" }
                         ]
-    # , { name: "Haitian Creole", abrv: "ht"}, {name: "Hindi", abrv: "hi"}, {name: "Hungarian", abrv: "hu"}, {name: "Indonesian", abrv: "id"}, {name: "Irish", abrv: "ga"}, {name: "Italian", abrv: "it"}, {name: "Japanese", abrv: "ja"}, {name: "Javanese", abrv: "jw"}, {name: "Kannada", abrv: "kn"}, {name: "Korean", abrv: "ko"}, {name: "Kurdish", abrv: "ku"}, {name: "Latin", abrv: "la"}, {name: "Lithuanian", abrv: "lt" }, {name: "French", abrv: "fr" }, {name: "Turkish", abrv: "tr" }, {name: "Bengali", abrv: "bn" }, {name: "Swedish", abrv: "sv" }, {name: "Chinese", abrv: "zh-CN" }, {name: "French", abrv: "fr" } ]
     respond_to do |format|
        format.js {}
     end

@@ -1,6 +1,6 @@
 <% if @users.any?%>
    <% @users.each do |other_user| %>
-      <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+      <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post, remote: true) do %>
          <p><%= other_user.username %></p>
       <% end %>
    <% end %>

@@ -5,8 +5,8 @@
          <br>
          <small>Only PNG, JPG and GIf images are allowed</small>
       </div> -->
-      <div class=" col-sm-7">
-         <%= f.text_area :content, data: {textarea: "message"}%>
+      <div class="col-sm-12">
+         <%= f.text_area :content, data: {textarea: "message"}, class: 'form-control'%>
       </div>
    </div>
    <!-- this hidden field is for the MessagesController and Action Cable to keep track of what chat this message belongs to -->

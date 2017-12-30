@@ -6,7 +6,7 @@
 
 <% if message.user_id == current_user.id %>
    <li class="sent">
-     <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+     <%= image_tag "http://emilcarlsson.se/assets/mikeross.png" %>
      <% translation = TRANSLATOR.translate message.content, to: @target %>
      <p><%= translation %></p>
      <% if message.attachment_data? and false %>
@@ -18,7 +18,7 @@
 <% else %>
    <li class="replies">
       <% translation = TRANSLATOR.translate message.content, to: @target %>
-      <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+      <%= image_tag "http://emilcarlsson.se/assets/mikeross.png" %>
        <p><%= translation %></p>
        <% if message.attachment_data? and false %>
           <br>

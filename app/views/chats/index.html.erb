@@ -13,30 +13,15 @@
       <% end %>
      <% end %>
    </ul>
-   <p>All Users:</p>
-   <ul class="list-unstyled">
-     <% User.all.each do |other_user| %>
-      <% if other_user != current_user %>
-        <li>
-          <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-          <%= other_user.username %>
-          <% end %>
-        </li>
-       <% end %>
-     <% end %>
-   </ul>
-
-
    <%= form_tag(users_path, method: :get, :id => "users_search", remote: :true) do %>
       <p>
         Search for a user <%= text_field_tag :term, params[:term], class: "form__input", placeholder: "Username" %>
         <br>
-        <%= submit_tag 'Search', name: nil, class: "btn btn-primary" %>
+        <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-round" %>
      </p>
      <div id="users">
-        <%#= render '../users/users' %>
+        <!-- Ajax inserts users here from search -->
      </div>
    <% end %>
 
-   <%#= link_to "Logout", session_path(current_user.id), method: :delete  %>
 </div>

@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
    $("#target").change(function(){
       var self = $(this)
       $("#message_target_to_msg").val(self.val())
@@ -12,5 +12,8 @@ $(function(){
          }
       });
    })
-   
+
+   if ($(".list-item").length > 0) {
+      $(".list-unstyled a:first").trigger('click');
+   }
 })

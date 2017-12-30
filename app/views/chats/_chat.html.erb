@@ -1,0 +1,15 @@
+<%= javascript_include_tag "channels/messages" %>
+<div id="messages">
+   <%= hidden_field_tag :chat_message_url, chat_messages_path(@chat) %>
+   <%= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }), class: 'form-control' %>
+   <br>
+   <% @target = "en" %>
+   <div class="no-padding right-side messages">
+      <ul>
+         <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
+      </ul>
+   </div>
+   <br>
+</div>
+<%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+<%= hidden_field_tag :chat_id, @chat.id%>

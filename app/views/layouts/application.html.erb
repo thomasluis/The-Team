@@ -61,10 +61,14 @@
    </nav>
 </header>
 <!--Main Navigation-->
-<span class="notice"><%= notice %></span>
-<span class="alert"><%= alert %></span>
+<% if notice.present? %>
+   <span class="notice"><%= notice %></span>
+<% end %>
+<% if alert.present? %>
+   <span class="alert"><%= alert %></span>
+<% end %>
 <!--Main Layout-->
-<main class="view py-5 white-text wow fadeInUp">
+<main class="view">
    <%= yield %>
 </main>
 <!-- Optional JavaScript -->

@@ -1,0 +1,3 @@
+$(".right-side").html("<%= escape_javascript(render("chat")) %>");
+var $t = $('.messages');
+$t.animate({"scrollTop": $('.messages')[0].scrollHeight}, "slow");

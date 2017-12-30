@@ -4,7 +4,7 @@ class Message < ApplicationRecord
 
    belongs_to :chat
 
-   attr_accessor :target_to_msg
+   attr_accessor :target_to_msg, :current_user
 
    # validates :body, presence: true, unless: :attachment_data
 
@@ -26,6 +26,7 @@ class Message < ApplicationRecord
 
    def broadcast_message
       target = self.target_to_msg.presence
-      MessageBroadcastJob.perform_later(self, target)
+      current_user = self.user
+      MessageBroadcastJob.perform_later(self, target, current_user)
    end
 end

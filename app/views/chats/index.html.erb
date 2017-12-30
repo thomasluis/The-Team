@@ -1,27 +1,39 @@
-<div class="container">
-   <p>Existing Chats:</p>
-   <ul class="list-unstyled">
-    <% if @existing_chats_users %>
-      <% @existing_chats_users.each do |other_user| %>
-       <% if other_user != current_user %>
-         <li>
-           <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-           <%= other_user.username %>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-4 no-padding left-side" style="padding: 0;">
+         <ul class="list-unstyled">
+          <% if @existing_chats_users %>
+            <% @existing_chats_users.each do |other_user| %>
+             <% if other_user != current_user %>
+               <%= link_to(user_chats_path(current_user, :other_user => other_user.id),
+                            method: :post, remote: true) do %>
+                  <li class="list-item">
+                     <div class="media">
+                       <img class="d-flex align-self-center mr-3 ml-3 rounded-circle" src="https://randomuser.me/api/portraits/med/men/85.jpg" alt="Generic placeholder image">
+                       <div class="media-body align-self-center">
+                          <h5 class="mb-0">
+                             <%= other_user.username.titleize %>
+                            </h5>
+                       </div>
+                     </div>
+                  </li>
+               <% end %>
+              <% end %>
+            <% end %>
            <% end %>
-         </li>
-        <% end %>
-      <% end %>
-     <% end %>
-   </ul>
-   <%= form_tag(users_path, method: :get, :id => "users_search", remote: :true) do %>
-      <p>
-        Search for a user <%= text_field_tag :term, params[:term], class: "form__input", placeholder: "Username" %>
-        <br>
-        <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-round" %>
-     </p>
-     <div id="users">
-        <!-- Ajax inserts users here from search -->
-     </div>
-   <% end %>
-
+         </ul>
+         <%= form_tag(users_path, method: :get, :id => "users_search", remote: :true) do %>
+            <p>
+              Search for a user <%= text_field_tag :term, params[:term], class: "form__input", placeholder: "Username" %>
+              <br>
+              <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-round" %>
+           </p>
+           <div id="users">
+              <!-- Ajax inserts users here from search -->
+           </div>
+           <% end %>
+      </div>
+      <div class="col-md-8 no-padding right-side" style="padding: 0;">
+      </div>
+   </div>
 </div>

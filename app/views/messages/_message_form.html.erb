@@ -1,10 +1,10 @@
 <%=form_for message, remote: true, authenticity_token: true do |f|%>
    <div class="row">
-      <div class=" col-sm-5">
-         <%= f.file_field :attachment, id: 'message-attachment' %>
+      <!-- <div class=" col-sm-5">
+         <%#= f.file_field :attachment, id: 'message-attachment' %>
          <br>
          <small>Only PNG, JPG and GIf images are allowed</small>
-      </div>
+      </div> -->
       <div class=" col-sm-7">
          <%= f.text_area :content, data: {textarea: "message"}%>
       </div>

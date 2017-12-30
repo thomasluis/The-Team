@@ -1,5 +1,9 @@
-<% @users.each do |other_user| %>
-   <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-      <p><%= other_user.username %></p>
+<% if @users.any?%>
+   <% @users.each do |other_user| %>
+      <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+         <p><%= other_user.username %></p>
+      <% end %>
    <% end %>
+<%else %>
+   <h1>We could not found any user that meet that criteria</h1>
 <% end %>

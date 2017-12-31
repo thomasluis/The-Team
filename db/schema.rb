@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223200848) do
+ActiveRecord::Schema.define(version: 20171231191823) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "chats", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171223200848) do
     t.string "username"
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_token"], name: "index_users_on_remember_token"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

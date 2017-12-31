@@ -20,6 +20,11 @@
           <%= form.text_field :username, class: "form__input", placeholder: "Username" %>
         </div>
 
+        <div class="text-field form__group">
+          <%= form.file_field :avatar %>
+          <%= form.hidden_field :avatar_cache %>
+        </div>
+
         <!-- <div class="text-field form__group">
           <%#= form.text_field :native_language, class: "form__input", placeholder: "Native Language" %>
         </div> -->

@@ -74,3 +74,6 @@ gem "google-cloud-translate", "~> 1.1"
 
 # Added at 2017-12-27 14:43:35 -0500 by luisthomas:
 gem "pg", "~> 0.21.0"
+
+# Added at 2017-12-31 14:04:27 -0500 by luisthomas:
+gem "carrierwave", "~> 1.2"

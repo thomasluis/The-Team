@@ -8,8 +8,18 @@ class UsersController < Clearance::UsersController
    end
 
    def new
+      u = User.new
+      u.avatar = params[:file] # Assign a file like this, or
 
-      @all_languagues = [ { name: "English", abrv: "en"}, { name: "Spanish", abrv: "es" }, { name: "Portuguese", abrv: 'pt' }, {name: "German", abrv: "de"}, { name: "Greek", abrv: "el"}, { name: "Haitian Creole", abrv: "ht"}, {name: "Hindi", abrv: "hi"}, {name: "Hungarian", abrv: "hu"}, {name: "Indonesian", abrv: "id"}, {name: "Irish", abrv: "ga"}, {name: "Italian", abrv: "it"}, {name: "Japanese", abrv: "ja"}, {name: "Javanese", abrv: "jw"}, {name: "Kannada", abrv: "kn"}, {name: "Korean", abrv: "ko"}, {name: "Kurdish", abrv: "ku"}, {name: "Latin", abrv: "la"}, {name: "Lithuanian", abrv: "lt" }, {name: "French", abrv: "fr" }, {name: "Turkish", abrv: "tr" }, {name: "Bengali", abrv: "bn" }, {name: "Swedish", abrv: "sv" }, {name: "Chinese", abrv: "zh-CN" }, {name: "French", abrv: "fr" } ]
+      # like this
+      File.open('somewhere') do |f|
+         u.avatar = f
+      end
+
+      u.save!
+      u.avatar.url # => '/url/to/file.png'
+      u.avatar.current_path # => 'path/to/file.png'
+      u.avatar_identifier # => 'file.png'
    end
 
    private
@@ -18,6 +28,9 @@ class UsersController < Clearance::UsersController
       email = user_params.delete(:email)
       password = user_params.delete(:password)
       username = user_params.delete(:username)
+      avatar = user_params.delete(:avatar)
+      avatar_cache = user_params.delete(:avatar_cache)
+      remove_avatar = user_params.delete(:remove_avatar)
       # native_language = user_params.delete(:native_language)
       # term = user_params.delete(:term)
 
@@ -25,6 +38,9 @@ class UsersController < Clearance::UsersController
          user.email = email
          user.password = password
          user.username = username
+         user.avatar = avatar
+         user.avatar_cache = avatar_cache
+         user.remove_avatar = remove_avatar
          # user.native_language = native_language
          # user.term = term
       end

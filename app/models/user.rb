@@ -1,9 +1,15 @@
 class User < ApplicationRecord
   include Clearance::User
+  mount_uploader :avatar, AvatarUploader
 
   has_many :messages, dependent: :destroy
   has_many :subscriptions
   has_many :chats, through: :subscriptions
+
+  validates_presence_of   :avatar
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
+  
   def existing_chats_users
     existing_chat_users = []
     self.chats.each do |chat|

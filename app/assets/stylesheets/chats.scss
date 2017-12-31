@@ -78,24 +78,26 @@ background: #E6EAEA;
 
 				img {
 					margin: 6px 8px 0 0;
+               float: right;
 				}
 
 				p {
 					background: $light;
 					color: $white;
+               float: right;
 				}
 			}
 
 			&.replies {
 
 				img {
-					float: right;
+
 					margin: 6px 0 0 8px;
 				}
 
 				p {
 					background: $white;
-					float: right;
+
 				}
 			}
 

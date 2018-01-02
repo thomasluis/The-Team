@@ -21,15 +21,16 @@
           <%= form.text_field :username, class: "form__input" %>
         </div>
 
-        <div class="text-field form__group">
-           <p class="form-white">Upload profile image</p>
-          <%= form.file_field :avatar, placeholder: "Your Image" %>
-          <%= form.hidden_field :avatar_cache %>
-        </div>
 
         <div class="password-field form__group">
            <%= form.label :password, class: "form-white" %>
           <%= form.password_field :password, class: "form__input" %>
+        </div>
+        
+        <div class="text-field form__group">
+           <p class="form-white">Upload profile image</p>
+           <%= form.file_field :avatar, placeholder: "Your Image" %>
+           <%= form.hidden_field :avatar_cache %>
         </div>
 
         <div class="submit-field">

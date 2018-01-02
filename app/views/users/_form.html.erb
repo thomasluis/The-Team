@@ -21,15 +21,11 @@
           <%= form.text_field :username, class: "form__input" %>
         </div>
 
-        <!-- <div class="text-field form__group">
-          <%#= form.file_field :avatar %>
-          <%#= form.hidden_field :avatar_cache %>
-        </div> -->
-
-        <!-- <div class="text-field form__group">
-          <%#= form.text_field :native_language, class: "form__input", placeholder: "Native Language" %>
-        </div> -->
-        <%#= select_tag 'target', options_for_select(@all_languagues.collect{ |l| [l[:name], l[:abrv]] }) %>
+        <div class="text-field form__group">
+           <p class="form-white">Your profile image</p>
+          <%= form.file_field :avatar %>
+          <%= form.hidden_field :avatar_cache %>
+        </div>
 
         <div class="password-field form__group">
            <%= form.label :password, class: "form-white" %>
@@ -40,7 +36,7 @@
             <%= submit_tag 'Register', class: "btn btn-primary btn-lg btn-block"  %>
         </div>
         <div class="">
-           <small>Already chatting? <%= link_to "Sign in", sign_in_path %></small>
+           <small>Already chatting?<strong><%= link_to "Sign in", sign_in_path %></strong></small>
         </div>
     </div>
 </div>

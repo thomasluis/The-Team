@@ -22,8 +22,8 @@
         </div>
 
         <div class="text-field form__group">
-           <p class="form-white">Your profile image</p>
-          <%= form.file_field :avatar %>
+           <p class="form-white">Upload profile image</p>
+          <%= form.file_field :avatar, placeholder: "Your Image" %>
           <%= form.hidden_field :avatar_cache %>
         </div>
 

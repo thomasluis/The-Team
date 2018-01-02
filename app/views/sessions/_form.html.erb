@@ -9,11 +9,13 @@
             </header>
             <br>
             <div class="text-field form__group">
-               <%= form.text_field :email, type: 'email', class: "form__input", placeholder: "Email" %>
+               <%= form.label :username, class: "form-white" %>
+               <%= form.text_field :email, type: 'email', class: "form__input" %>
             </div>
 
             <div class="password-field form__group">
-               <%= form.password_field :password, class: "form__input", placeholder: "Password" %>
+               <%= form.label :password, class: "form-white" %>
+               <%= form.password_field :password, class: "form__input" %>
             </div>
 
             <div class="submit-field">
@@ -22,11 +24,11 @@
 
             <div class="other-links form__group">
                <% if Clearance.configuration.allow_sign_up? %>
-               <small>
-                  <%= link_to t(".sign_up"), sign_up_path %>
-                  <% end %>|
+               <p>
+                  <%= link_to t(".register"), sign_up_path %>
+                  <% end %> <br>
                   <%= link_to t(".forgot_password"), new_password_path %>
-               </small>
+               </p>
             </div>
          </div>
          <% end %>

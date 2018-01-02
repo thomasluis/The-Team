@@ -16,7 +16,7 @@ body {
    // background-size: 200% 100% !important;
    animation: move 5s ease infinite;
    transform: translate3d(0, 0, 0);
-   background: linear-gradient(#6E8898 10%, #9FB1BC 90%) no-repeat;
+   background: linear-gradient(#6E8898 10%, #4B6E82 90%) no-repeat;
    // height: 100vh;
    height: 100%;
    margin: 0;
@@ -31,6 +31,14 @@ textarea {
 }
 .form-control {
    background-color: white;
+   &:focus {
+      background-color: white;
+   }
+
+}
+.strong {
+   font-weight: bold;
+   font-size: 32px;
 }
 
 .pt-5, .py-5 {
@@ -43,6 +51,7 @@ textarea {
    margin: 10vh auto;
    border: 3px solid white;
    padding: 40px;
+   text-align: center;
 
 }
 
@@ -149,6 +158,25 @@ anchors are inline so you need ot make them block to go full width
    width:100%;
 }
 
+.view img {
+   display: inline-block;
+}
+
+.form-white {
+   color: white;
+   text-transform: uppercase;
+   font-size: 24px;
+   font-weight: bold;
+}
+
+.form__input {
+   background-color: white !important;
+   margin-bottom: 15px;
+}
+
+.btn-sign-in {
+   background-size: 24px;
+}
 footer a{
    color: #bfffff;
 }
@@ -173,6 +201,19 @@ div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
    padding: 0px;
 }
 
+.other-links {
+   color: white;
+   font-size: 24px;
+   a {
+      color: white;
+      &:hover {
+         color: #CECECE;
+      }
+   }
+}
+.submit-field {
+   padding: 15px 0;
+}
 @keyframes NO {
    from, to {
       -webkit-transform: translate3d(0, 0, 0);

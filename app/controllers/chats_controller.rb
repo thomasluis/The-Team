@@ -32,8 +32,10 @@ class ChatsController < ApplicationController
                            {name: "Latin", abrv: "la"}, {name: "Lithuanian", abrv: "lt" },
                            {name: "French", abrv: "fr" }, {name: "Turkish", abrv: "tr" },
                            {name: "Bengali", abrv: "bn" }, {name: "Swedish", abrv: "sv" },
-                           {name: "Chinese", abrv: "zh-CN" }, {name: "French", abrv: "fr" }
+                           {name: "Chinese", abrv: "zh-CN" }, {name: "French", abrv: "fr" },
+                           {name: "Russian", abrv: "ru" }, {name: "Norwegian", abrv: "no" }
                         ]
+
     respond_to do |format|
        format.js {}
     end

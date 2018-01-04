@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+   
 
    def index
       @chat = current_user.chats.find_by_id(params[:chat_id])
